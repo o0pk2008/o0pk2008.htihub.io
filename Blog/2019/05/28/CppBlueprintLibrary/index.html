@@ -96,18 +96,20 @@
 
 
 
-  <meta name="description" content="因为最近项目需要基于ThreeJS做很多粒子特效，感觉UE4的粒子发射器做这种效果会比较方便，所以就以UE4粒子发射器的思路手写了一个ThreeJS的粒子发射器，思路很简单：1.生产粒子；2.管理粒子；3.粒子运动；4.粒子发射；后期还可以根据需要扩展很多其他的功能效果；代码如下：ThreeJsParticleSystem By_Ning+12345678910111213141516171819">
-<meta name="keywords" content="经验积累">
+  <meta name="description" content="在实际的开发需求可能会遇到一些无法用蓝图实现的功能，或者实现起来比较麻烦，更或者是一些长期不动的逻辑而不想创建在蓝图中，那么就需要将一些逻辑写在C++里，这些逻辑可能是比如玩家的Input，基本上不会变的，可以写在C++里，今天我来创建一个获取本地时间的一个蓝图函数，首先创建一个C++ Class为Blueprint Library，创建好后，在头文件的GENERATED_BODY()下创建一个函">
+<meta name="keywords" content="C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="自己写的一个ThreeJS的粒子发射器">
-<meta property="og:url" content="http://ningstudio.cn/Blog/2019/05/16/ThreeJsParticleSystem/index.html">
+<meta property="og:title" content="使用C++创建一个蓝图函数">
+<meta property="og:url" content="http://ningstudio.cn/Blog/2019/05/28/CppBlueprintLibrary/index.html">
 <meta property="og:site_name" content="NingStudio">
-<meta property="og:description" content="因为最近项目需要基于ThreeJS做很多粒子特效，感觉UE4的粒子发射器做这种效果会比较方便，所以就以UE4粒子发射器的思路手写了一个ThreeJS的粒子发射器，思路很简单：1.生产粒子；2.管理粒子；3.粒子运动；4.粒子发射；后期还可以根据需要扩展很多其他的功能效果；代码如下：ThreeJsParticleSystem By_Ning+12345678910111213141516171819">
+<meta property="og:description" content="在实际的开发需求可能会遇到一些无法用蓝图实现的功能，或者实现起来比较麻烦，更或者是一些长期不动的逻辑而不想创建在蓝图中，那么就需要将一些逻辑写在C++里，这些逻辑可能是比如玩家的Input，基本上不会变的，可以写在C++里，今天我来创建一个获取本地时间的一个蓝图函数，首先创建一个C++ Class为Blueprint Library，创建好后，在头文件的GENERATED_BODY()下创建一个函">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-05-16T07:57:17.281Z">
+<meta property="og:image" content="http://ningstudio.cn/Blog/2019/05/28/CppBlueprintLibrary/1.png">
+<meta property="og:updated_time" content="2019-05-28T06:21:49.898Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="自己写的一个ThreeJS的粒子发射器">
-<meta name="twitter:description" content="因为最近项目需要基于ThreeJS做很多粒子特效，感觉UE4的粒子发射器做这种效果会比较方便，所以就以UE4粒子发射器的思路手写了一个ThreeJS的粒子发射器，思路很简单：1.生产粒子；2.管理粒子；3.粒子运动；4.粒子发射；后期还可以根据需要扩展很多其他的功能效果；代码如下：ThreeJsParticleSystem By_Ning+12345678910111213141516171819">
+<meta name="twitter:title" content="使用C++创建一个蓝图函数">
+<meta name="twitter:description" content="在实际的开发需求可能会遇到一些无法用蓝图实现的功能，或者实现起来比较麻烦，更或者是一些长期不动的逻辑而不想创建在蓝图中，那么就需要将一些逻辑写在C++里，这些逻辑可能是比如玩家的Input，基本上不会变的，可以写在C++里，今天我来创建一个获取本地时间的一个蓝图函数，首先创建一个C++ Class为Blueprint Library，创建好后，在头文件的GENERATED_BODY()下创建一个函">
+<meta name="twitter:image" content="http://ningstudio.cn/Blog/2019/05/28/CppBlueprintLibrary/1.png">
 
 
 
@@ -115,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://ningstudio.cn/Blog/2019/05/16/ThreeJsParticleSystem/">
+  <link rel="canonical" href="http://ningstudio.cn/Blog/2019/05/28/CppBlueprintLibrary/">
 
 
 
@@ -125,7 +127,7 @@
   };
 </script>
 
-  <title>自己写的一个ThreeJS的粒子发射器 | NingStudio</title>
+  <title>使用C++创建一个蓝图函数 | NingStudio</title>
   
 
 
@@ -294,7 +296,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://ningstudio.cn/Blog/Blog/2019/05/16/ThreeJsParticleSystem/">
+    <link itemprop="mainEntityOfPage" href="http://ningstudio.cn/Blog/Blog/2019/05/28/CppBlueprintLibrary/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Ning+">
@@ -311,7 +313,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">自己写的一个ThreeJS的粒子发射器
+          <h1 class="post-title" itemprop="name headline">使用C++创建一个蓝图函数
 
               
             
@@ -337,7 +339,7 @@
                 
               
 
-              <time title="Erstellt: 2019-05-16 15:48:03 / Geändert am: 15:57:17" itemprop="dateCreated datePublished" datetime="2019-05-16T15:48:03+08:00">2019-05-16</time>
+              <time title="Erstellt: 2019-05-28 14:19:47 / Geändert am: 14:21:49" itemprop="dateCreated datePublished" datetime="2019-05-28T14:19:47+08:00">2019-05-28</time>
             
 
             
@@ -359,7 +361,7 @@
                 <span class="post-meta-item-text">in</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/ThreeJS/" itemprop="url" rel="index"><span itemprop="name">ThreeJS</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/Blog/categories/UnrealEngine4/" itemprop="url" rel="index"><span itemprop="name">UnrealEngine4</span></a></span>
 
                 
                 
@@ -394,7 +396,9 @@
       
 
       
-        <p>因为最近项目需要基于ThreeJS做很多粒子特效，感觉UE4的粒子发射器做这种效果会比较方便，所以就以UE4粒子发射器的思路手写了一个ThreeJS的粒子发射器，思路很简单：<br>1.生产粒子；<br>2.管理粒子；<br>3.粒子运动；<br>4.粒子发射；<br>后期还可以根据需要扩展很多其他的功能效果；<br>代码如下：<br><figure class="highlight plain"><figcaption><span>ThreeJsParticleSystem By_Ning+</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">//生产粒子 Ning+</span><br><span class="line">function GreatSprite() &#123;</span><br><span class="line">    var textureLoader = new THREE.TextureLoader();</span><br><span class="line">    var mapC = textureLoader.load(&quot;img/LineSprite4.png&quot;);</span><br><span class="line">    var materialC = new THREE.SpriteMaterial(&#123;</span><br><span class="line">        map: mapC,</span><br><span class="line">        transparent: true,</span><br><span class="line">        opacity: 0, //初始化0-1</span><br><span class="line">        alphaTest: 0.2</span><br><span class="line">        // color: 0xffffff,</span><br><span class="line">        // fog: true</span><br><span class="line">    &#125;);</span><br><span class="line">    var sprite = new THREE.Sprite(materialC);</span><br><span class="line">    sprite.scale.set(0.8, 0.8, 1);</span><br><span class="line">    return (sprite);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//管理粒子 Ning+</span><br><span class="line">var SpriteGroup = new THREE.Group();</span><br><span class="line">function GreatSpriteMany() &#123;</span><br><span class="line">    SpriteGroup = new THREE.Group();</span><br><span class="line">    for (var i = 7; i &gt;= 0; i--) &#123;</span><br><span class="line">        obj = GreatSprite();</span><br><span class="line">        obj.position.set(Math.random() * 2 - 1, Math.random() * 2 - 1, Math.random() * 2 - 1);</span><br><span class="line">        SpriteGroup.add(obj);</span><br><span class="line">    &#125;</span><br><span class="line">    scene.add(SpriteGroup);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//粒子运动 Ning+</span><br><span class="line">var TweenSprite;</span><br><span class="line">function TweenSprite(obj) &#123;</span><br><span class="line">    TweenSpriteUP = new TWEEN.Tween(obj.position)</span><br><span class="line">        .to(&#123;</span><br><span class="line">            x: obj.position.x,</span><br><span class="line">            y: 2,</span><br><span class="line">            z: obj.position.z</span><br><span class="line">        &#125;, 6000)</span><br><span class="line">        .easing(TWEEN.Easing.Cubic.Out);</span><br><span class="line">    TweenSpriteUP.start();</span><br><span class="line">    TweenSpriteUP.onComplete(function() &#123;</span><br><span class="line">        scene.remove(obj);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    for (var i = obj.children.length - 1; i &gt;= 0; i--) &#123;</span><br><span class="line">        let objMaterial = obj.children[i].material;</span><br><span class="line">        TweenSpriteOpacity1 = new TWEEN.Tween(objMaterial)</span><br><span class="line">            .to(&#123;</span><br><span class="line">                opacity: 0.8</span><br><span class="line">            &#125;, 1000)</span><br><span class="line">            .easing(TWEEN.Easing.Cubic.Out);</span><br><span class="line"></span><br><span class="line">        TweenSpriteOpacity1.start();</span><br><span class="line">        TweenSpriteOpacity1.onComplete(function() &#123;</span><br><span class="line">            TweenSpriteOpacity2 = new TWEEN.Tween(objMaterial)</span><br><span class="line">                .to(&#123;</span><br><span class="line">                    opacity: 0</span><br><span class="line">                &#125;, 1000)</span><br><span class="line">                .easing(TWEEN.Easing.Cubic.Out);</span><br><span class="line">            TweenSpriteOpacity2.start();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//粒子发射 Ning+</span><br><span class="line">function CreateEmitter() &#123;</span><br><span class="line">    setInterval(&quot;GreatSpriteNew()&quot;, &quot;500&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>在实际的开发需求可能会遇到一些无法用蓝图实现的功能，或者实现起来比较麻烦，更或者是一些长期不动的逻辑而不想创建在蓝图中，那么就需要将一些逻辑写在C++里，这些逻辑可能是比如玩家的Input，基本上不会变的，可以写在C++里，今天我来创建一个获取本地时间的一个蓝图函数，首先创建一个C++ Class为Blueprint Library，创建好后，在头文件的GENERATED_BODY()下创建一个函数，代码如下：<br><figure class="highlight plain"><figcaption><span>蓝图函数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">UFUNCTION(BlueprintCallable, BlueprintPure, Category = &quot;MDSBPLibrary&quot;)</span><br><span class="line">		static FString GetCurrentOSTime(</span><br><span class="line">			int32&amp; MilliSeconds,</span><br><span class="line">			int32&amp; Seconds,</span><br><span class="line">			int32&amp; Minutes,</span><br><span class="line">			int32&amp; Hours12,</span><br><span class="line">			int32&amp; Hours24,</span><br><span class="line">			int32&amp; Day,</span><br><span class="line">			int32&amp; Month,</span><br><span class="line">			int32&amp; Year</span><br><span class="line">		);</span><br></pre></td></tr></table></figure></p>
+<p>然后在CPP中写入以下代码：<br><figure class="highlight plain"><figcaption><span>蓝图函数</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">FString UMDSBPLibrary::GetCurrentOSTime(</span><br><span class="line">	int32&amp; MilliSeconds,</span><br><span class="line">	int32&amp; Seconds,</span><br><span class="line">	int32&amp; Minutes,</span><br><span class="line">	int32&amp; Hours12,</span><br><span class="line">	int32&amp; Hours24,</span><br><span class="line">	int32&amp; Day,</span><br><span class="line">	int32&amp; Month,</span><br><span class="line">	int32&amp; Year</span><br><span class="line">) &#123;</span><br><span class="line">	const FDateTime Now = FDateTime::Now();</span><br><span class="line"></span><br><span class="line">	MilliSeconds = Now.GetMillisecond();</span><br><span class="line">	Seconds = Now.GetSecond();</span><br><span class="line">	Minutes = Now.GetMinute();</span><br><span class="line">	Hours12 = Now.GetHour12();</span><br><span class="line">	Hours24 = Now.GetHour(); //24</span><br><span class="line">	Day = Now.GetDay();</span><br><span class="line">	Month = Now.GetMonth();</span><br><span class="line">	Year = Now.GetYear();</span><br><span class="line"></span><br><span class="line">	//返回当前系统的所有时间信息</span><br><span class="line">	FString NowWithMS = Now.ToString();</span><br><span class="line">	NowWithMS += &quot;.&quot; + FString::FromInt(MilliSeconds);</span><br><span class="line">	return NowWithMS;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>然后构建，在UE蓝图中搜索GetCurrentOSTime极客使用该函数，如下图所示：<br><img src="/Blog/2019/05/28/CppBlueprintLibrary/1.png" alt="最终效果"></p>
 
       
     </div>
@@ -418,7 +422,7 @@
       
         <div class="post-tags">
           
-            <a href="/Blog/tags/经验积累/" rel="tag"># 经验积累</a>
+            <a href="/Blog/tags/C/" rel="tag"># C++</a>
           
         </div>
       
@@ -431,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Blog/2019/05/16/CircularLayout/" rel="next" title="拓扑圆形布局算法">
-                <i class="fa fa-chevron-left"></i> 拓扑圆形布局算法
+              <a href="/Blog/2019/05/28/Normal-AdhesiveSurface/" rel="next" title="UE4使用Normal让物体贴合表面">
+                <i class="fa fa-chevron-left"></i> UE4使用Normal让物体贴合表面
               </a>
             
           </div>
@@ -440,10 +444,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/Blog/2019/05/28/SmoothAngleScaling/" rel="prev" title="UE4平滑视角缩放">
-                UE4平滑视角缩放 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
